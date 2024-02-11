@@ -4,10 +4,17 @@ import Section from '@/components/Section.astro'
 <Section >
   <div class="hero_wrapper">
     <div class="back-blur"/>
-    <div class="ander-image-container">
-      <img src="/ander.png">
-    </div>
-    <p> estamos en hero asdf asdf asdf asdf dfd fasf asdf asdfsaf asd</p>
+    <header>
+      <div class="ander-image-container">
+        <img src="/ander.png">
+      </div>
+      <div class="about_me">
+        <h1>Ander Fernandez</h1>
+        <span> Software Engineer</span>
+      </div>
+    </header>
+    <p> Especializado en la ingenieria de Software, con un gran interes en el desarrollo de productos.</p>
+    <p> Con capacidad de aprender y aplicar mis conocimientos al ambito profesional.</p>
   </div>
 </Section>
 
@@ -16,7 +23,13 @@ import Section from '@/components/Section.astro'
     position: relative;
     width: 100%;
     height: 500px;
-    margin-top: -28px;
+    margin-top: -22px;
+  }
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
   }
   .ander-image-container{
     width: 56px;
@@ -28,7 +41,18 @@ import Section from '@/components/Section.astro'
     border-radius: 15px;
     object-fit: contain;
   }
+  .about_me{
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 
+  span{
+    color: #ffffffd7;
+    font-size: 12px;
+  }
   .back-blur{
     z-index: 0;
     position: absolute;
