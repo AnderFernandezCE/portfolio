@@ -1,17 +1,22 @@
-<a>
+---
+const {width} = Astro.props
+---
+<a style={`width: ${width}px`}>
   <slot />
 </a>
 
 <style>
   a{
-    padding: 10px 40px;
-    max-width: 200px;
+    max-width: 256px;
+    width: 100%;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #1C1C1C;
     border: 1px solid #696969;
     border-radius: 50px;
+    font-size: 16px;
   }
 </style>
 
