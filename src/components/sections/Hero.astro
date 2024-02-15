@@ -19,27 +19,30 @@ import Primary from '../buttons/Primary.astro'
         <span> Software Engineer</span>
       </div>
     </header>
-    <p> Especializado en la <highlight>ingenieria de Software</highlight>, con un gran interes en el <highlight>desarrollo de productos</highlight>.
-    Con capacidad de aprender y aplicar mis conocimientos al ambito profesional.</p>
+
     <ul>
       <li>
-        <a href="" target="_blank">
-          <Linkedin width="40" height="40"></Linkedin>
+        <a href="https://www.linkedin.com/in/ander-fernandez-carrero-2b968521a/" target="_blank">
+          <Linkedin width="25" height="25"></Linkedin>
         </a>
       </li>
       <li>
-        <a href="" target="_blank">
-          <Github width="40" height="40"></Github>
+        <a href="https://github.com/AnderFernandezCE" target="_blank">
+          <Github width="25" height="25"></Github>
         </a>
       </li>
       <li>
-        <a href="" target="_blank">
-          <Mail width="40" height="40"></Mail>
+        <a href="mailto:anderfernandez.ce@gmail.com" target="_blank">
+          <Mail width="25" height="25"></Mail>
         </a>
       </li>
     </ul>
+    <p> Especializado en la <highlight>ingenieria de Software</highlight>, con un gran interes en el <highlight>desarrollo de productos</highlight>.
+    Con capacidad de aprender y aplicar mis conocimientos al ambito profesional.</p>
+
+    
     <nav>
-      <Primary width="500"> Contact me</Primary>
+      <Primary href="/#contact"> Contact me</Primary>
       <Secondary>Download CV</Secondary>
       <!-- <Secondary>
         <Linkedin width="26" height="26"></Linkedin>
@@ -59,7 +62,7 @@ import Primary from '../buttons/Primary.astro'
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   .ander-image-container{
     width: 56px;
@@ -91,18 +94,22 @@ import Primary from '../buttons/Primary.astro'
   ul{
     width: 100%;
     padding: 0;
+    margin:0;
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    border: solid 1px red;
+    gap: 30px;
+    /* margin-top: 10px; */
+    margin-bottom: 40px;
+    /* margin:40px 0; */
   }
   li{
     padding:0;
     margin: 0;
   }
   li a{
+    display: flex;
     color: #7AB3E0;
   }
   nav{

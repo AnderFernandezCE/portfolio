@@ -1,7 +1,7 @@
 ---
-const {width, height} = Astro.props
+const {href} = Astro.props
 ---
-<a>
+<a href={href}>
   <slot />
 </a>
 
@@ -14,7 +14,8 @@ const {width, height} = Astro.props
     align-items: center;
     background: #B682FE;
     border-radius: 50px;
-    color:black
+    color:black;
+    text-decoration: none;
 
   }
 </style>
