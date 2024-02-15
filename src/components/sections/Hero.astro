@@ -1,5 +1,11 @@
 ---
 import Section from '@/components/Section.astro'
+import Linkedin from '@/icons/Linkedin.astro'
+import Github from '@/icons/Github.astro'
+import Mail from '@/icons/Mail.astro'
+
+import Secondary from '../buttons/Secondary.astro'
+import Primary from '../buttons/Primary.astro'
 ---
 <Section >
   <div class="hero_wrapper">
@@ -13,8 +19,32 @@ import Section from '@/components/Section.astro'
         <span> Software Engineer</span>
       </div>
     </header>
-    <p> Especializado en la ingenieria de Software, con un gran interes en el desarrollo de productos.</p>
-    <p> Con capacidad de aprender y aplicar mis conocimientos al ambito profesional.</p>
+    <p> Especializado en la <highlight>ingenieria de Software</highlight>, con un gran interes en el <highlight>desarrollo de productos</highlight>.
+    Con capacidad de aprender y aplicar mis conocimientos al ambito profesional.</p>
+    <ul>
+      <li>
+        <a href="" target="_blank">
+          <Linkedin width="40" height="40"></Linkedin>
+        </a>
+      </li>
+      <li>
+        <a href="" target="_blank">
+          <Github width="40" height="40"></Github>
+        </a>
+      </li>
+      <li>
+        <a href="" target="_blank">
+          <Mail width="40" height="40"></Mail>
+        </a>
+      </li>
+    </ul>
+    <nav>
+      <Primary width="500"> Contact me</Primary>
+      <Secondary>Download CV</Secondary>
+      <!-- <Secondary>
+        <Linkedin width="26" height="26"></Linkedin>
+      </Secondary> -->
+    </nav>
   </div>
 </Section>
 
@@ -53,8 +83,36 @@ import Section from '@/components/Section.astro'
     color: #ffffffd7;
     font-size: 12px;
   }
+
+  highlight{
+    color: #D3B5FF
+  }
+
+  ul{
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    border: solid 1px red;
+  }
+  li{
+    padding:0;
+    margin: 0;
+  }
+  li a{
+    color: #7AB3E0;
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
   .back-blur{
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     left: 0;
 		right: 0;
@@ -65,7 +123,7 @@ import Section from '@/components/Section.astro'
 		margin-left: auto;
 		margin-right: auto;
 
-    background: linear-gradient(90deg, rgba(255, 68, 169, 0.1) 0%, rgba(20, 0, 255, 0.1) 100%);
+    background: linear-gradient(90deg, rgba(255, 68, 169, 0.15) 0%, rgba(20, 0, 255, 0.15) 100%);
     filter: blur(100px); 
   }
   

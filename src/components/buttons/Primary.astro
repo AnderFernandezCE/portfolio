@@ -1,0 +1,20 @@
+---
+const {width, height} = Astro.props
+---
+<a>
+  <slot />
+</a>
+
+<style>
+  a{
+    width:100px;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #B682FE;
+    border-radius: 50px;
+    color:black
+
+  }
+</style>
