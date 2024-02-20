@@ -1,13 +1,39 @@
 ---
 import Section from '@/components/Section.astro'
+import Primary_button from '../buttons/Primary_button.astro'
+import Secondary_button from '../buttons/Secondary_button.astro'
+import Send from '@/icons/Send.astro'
+import Copy from '@/icons/Copy.astro'
 ---
-<Section title="Contact" id="contact">
-  <p> Contact </p>
-  <div>pruba</div>
+<Section title="Contáctame" id="contact">
+  <div>
+    <input type="text" disabled value="anderfernandez.ce@gmail.com">
+    <Primary_button href="anderfernandez.ce@gmail.com">
+      <Send/>
+    </Primary_button>
+    <Secondary_button client:load>
+      <Copy/>
+    </Secondary_button>
+  </div>
 </Section>
 
 <style>
   div{
-    height: 800px;
+    display: flex;
+    flex-direction: row;
+    gap:5px;
   }
+  input{
+    background-color: #2A2A2C;
+    border-radius: 5px;
+    border: 1px solid #555555;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 70%;
+    /* height: 30px; */
+  }
+ 
 </style>

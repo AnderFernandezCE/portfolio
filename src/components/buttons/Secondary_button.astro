@@ -1,24 +1,29 @@
 ---
-const {href, width} = Astro.props
+function copyEmail(){
+  navigator.clipboard.writeText("anderfernandez.ce@gmail.com");
+
+  // Alert the copied text
+  alert("Copied the text: ");
+}  
 ---
-<a href={href} style={`width: ${width}px`} target="_blank">
+<button  >
   <slot />
-</a>
+</button>
 
 <style>
-  a{
+  button{
     max-width: 256px;
-    width: 100%;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #1C1C1C;
     border: 1px solid #696969;
-    border-radius: 50px;
+    border-radius: 10px;
     font-size: 16px;
     text-decoration: none;
     color: white;
+    cursor: pointer;
   }
 
   @media (width >= 700px) {

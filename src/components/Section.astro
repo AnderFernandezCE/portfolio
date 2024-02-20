@@ -3,21 +3,28 @@ const { title, id } = Astro.props
 ---
 
 <section id={id}>
-  {title && <h2>{title}</h2>}
+  {title && <h1>{title}</h1>}
   <slot />
 </section>  
 
 <style>
+  h1{
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
   section{
     max-width:900px;
     width:65%;
-    margin: 0 auto 72px;
+    margin: 0 auto 100px;
     /* position: relative; */
   }
   @media (width >= 700px) {
     section{
       width:75%;
-      margin: 0 auto 340px;
+      margin: 0 auto 200px;
+    }
+    h1{
+      font-size: 51px;
     }
   }
 

@@ -2,9 +2,13 @@
 import Section from '@/components/Section.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
 ---
-<Section title="Projects">
+<Section title="Proyectos">
 
-  <p>  Projects </p>
+  <ProjectCard imagePosition="left" title="Reposearch">
+    <img src="/reposearch.png" alt="reposearch" slot="image"/>  
+    <p slot="project-description">Especializado en la ingeniería de Software, con un gran interés en el desarrollo de productos. Con capacidad para aprender y aplicar mis conocimientos al ámbito profesional.</p>
+  </ProjectCard>
+
   <ProjectCard imagePosition="left" title="Password manager">
     <img src="/passman.png" alt="passman" slot="image"/>  
     <p slot="project-description">Especializado en la ingeniería de Software, con un gran interés en el desarrollo de productos. Con capacidad para aprender y aplicar mis conocimientos al ámbito profesional.</p>
@@ -12,3 +16,7 @@ import ProjectCard from '@/components/ProjectCard.astro'
 
 
 </Section>
+
+<style>
+  
+</style>
