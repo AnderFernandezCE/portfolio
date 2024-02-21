@@ -1,6 +1,6 @@
 ---
 import Section from '@/components/Section.astro'
-import Primary_button from '../buttons/Primary_button.astro'
+import Primary from '../buttons/Primary.astro'
 import Secondary_button from '../buttons/Secondary_button.astro'
 import Send from '@/icons/Send.astro'
 import Copy from '@/icons/Copy.astro'
@@ -8,20 +8,25 @@ import Copy from '@/icons/Copy.astro'
 <Section title="Contáctame" id="contact">
   <div>
     <input type="text" disabled value="anderfernandez.ce@gmail.com">
-    <Primary_button href="anderfernandez.ce@gmail.com">
+    <div class="buttons-container">
+      <Primary classname="button small_round" href="mailto:anderfernandez.ce@gmail.com">
       <Send/>
-    </Primary_button>
-    <Secondary_button client:load>
+    </Primary>
+    <Secondary_button classname="button">
       <Copy/>
     </Secondary_button>
+    </div>
+    
   </div>
 </Section>
 
 <style>
   div{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    gap:5px;
+    gap:5px; */
+    display: grid;
+    grid-template-columns: 1fr;
   }
   input{
     background-color: #2A2A2C;
@@ -32,8 +37,41 @@ import Copy from '@/icons/Copy.astro'
     justify-content: center;
     align-items: center;
     color: white;
-    width: 70%;
-    /* height: 30px; */
+    /* grid-column:1/4; */
+    height: 35px;
+    font-size: 14px;
+  }
+  .buttons-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .button {
+    height: 40px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .small_round{
+    border-radius: 5px;
+  }
+
+  @media (width >= 700px) {
+    div{
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+    .button {
+      margin:0;
+      height: 50px;
+    }
+    input{
+      height: 50px;
+      font-size: 18px;
+    }
   }
  
 </style>

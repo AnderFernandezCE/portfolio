@@ -1,12 +1,7 @@
 ---
-function copyEmail(){
-  navigator.clipboard.writeText("anderfernandez.ce@gmail.com");
-
-  // Alert the copied text
-  alert("Copied the text: ");
-}  
+const {classname, ...rest} = Astro.props
 ---
-<button  >
+<button  class={classname} {...rest}>
   <slot />
 </button>
 
@@ -19,7 +14,7 @@ function copyEmail(){
     align-items: center;
     background: #1C1C1C;
     border: 1px solid #696969;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 16px;
     text-decoration: none;
     color: white;

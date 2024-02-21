@@ -1,7 +1,7 @@
 ---
-const {href, width} = Astro.props
+const {href, width, classname , ...rest} = Astro.props
 ---
-<a href={href} style={`width: ${width}px`}>
+<a href={href} style={`width: ${width}px`} class={classname} {...rest}>
   <slot />
 </a>
 
@@ -17,12 +17,12 @@ const {href, width} = Astro.props
     border-radius: 50px;
     color:black;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   @media (width >= 700px) {
     a{
-      font-size: 28px;
+      font-size: 26px;
     }
   }
 </style>
