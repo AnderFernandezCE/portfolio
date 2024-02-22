@@ -1,15 +1,18 @@
 ---
-const { title, id } = Astro.props
+const { title, id} = Astro.props
 ---
 
 <section id={id}>
-  {title && <h1>{title}</h1>}
+  {title && <header><slot name="section-svg" /><h1>{title}</h1></header> }
   <slot />
 </section>  
 
 <style>
-  h1{
+  header{
+    display: flex;
+    align-items: center;
     margin-bottom: 50px;
+    gap:20px
   }
   section{
     max-width:900px;
