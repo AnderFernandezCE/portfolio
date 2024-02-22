@@ -10,9 +10,9 @@ import Copy from '@/icons/Copy.astro'
     <input type="text" disabled value="anderfernandez.ce@gmail.com">
     <div class="buttons-container">
       <Primary classname="button small_round" href="mailto:anderfernandez.ce@gmail.com">
-      <Send/>
-    </Primary>
-    <Secondary_button classname="button">
+        <Send/>
+      </Primary>
+    <Secondary_button classname="button copy-button">
       <Copy/>
     </Secondary_button>
     </div>
@@ -22,9 +22,6 @@ import Copy from '@/icons/Copy.astro'
 
 <style>
   div{
-    /* display: flex;
-    flex-direction: row;
-    gap:5px; */
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -75,3 +72,12 @@ import Copy from '@/icons/Copy.astro'
   }
  
 </style>
+
+<script>
+  const button = document.querySelector(".copy-button")
+  button.addEventListener('click', cpEmail)
+
+  function cpEmail(){
+    navigator.clipboard.writeText("anderfernandez.ce@gmail.com")
+  }
+</script>
