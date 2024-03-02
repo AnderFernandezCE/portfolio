@@ -5,6 +5,46 @@ import UserIcon from '@/icons/UserIcon.astro'
 
 <Section title="About">
   <UserIcon slot='section-svg'/>
-<p>estamos en about</p>
-
+  <div class="about-wrapper">
+    <div class="image-wrapper">
+      <img src="/aboutme.png">
+    </div>
+    <div class="content-wrapper">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione ipsam suscipit excepturi odio doloremque et ex dolorum eos minima delectus iure velit eveniet, officiis quos repudiandae laudantium! Asperiores, eaque perferendis!</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione ipsam suscipit excepturi odio doloremque et ex dolorum eos minima delectus iure velit eveniet, officiis quos repudiandae laudantium! Asperiores, eaque perferendis!</p>  
+    </div>
+  </div>
 </Section>
+
+<style>
+  .about-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+  }
+  .image-wrapper{
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @media (width >= 700px) {
+    .about-wrapper{
+      flex-direction: row;
+      gap:60px;
+    }
+
+    .image-wrapper{
+      width:300px;
+      height: 300px;
+    }
+
+  }
+</style>

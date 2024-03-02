@@ -3,7 +3,8 @@ const {imagePosition, title} = Astro.props
 ---
 <article>
   <div class:list={["image-container", imagePosition]}>
-    <slot name="image"></slot>
+    <slot name="image" />
+      <!-- <img src="/prueba.png" class="image-background"> -->
   </div>
   <div class="project-info-container">
     <div class="project-info"> 
@@ -16,26 +17,39 @@ const {imagePosition, title} = Astro.props
 </article>
 
 <style>
+  .image-background{
+    z-index: -1;
+    position: absolute;
+    top:-400px;
+    bottom:0;
+    object-fit: contain;
+  }
   article{
     width: 100%;
     border: 1px solid #7575756c;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     margin-bottom: 50px;
+    position: relative;
   }
 
   .project-info-container{
     background: linear-gradient(0deg, rgba(45, 45, 45, 0.65) 0%, rgba(29, 29, 29, 0.62) 100.01%);
+    border-radius: 0 0 20px 20px;
   }
 
   .project-info{
     width: 80%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-wrap: balance;
+    /* gap:15px; */
   }
   h2{
     color: #B47CFB;
+    /* margin-top:15px; */
   }
 
   .image-container{
@@ -45,7 +59,14 @@ const {imagePosition, title} = Astro.props
     background: radial-gradient(99.79% 99.79% at 50.21% 0%, rgba(91, 143, 185, 0.2844) 0%, rgba(91, 143, 185, 0.036) 100%);
     backdrop-filter: blur(5px);
     padding:40px 0;
+    border-radius:20px 20px 0 0;
+    /* border: 1px solid #7575756c; */
   }
 
+  @media (width >= 700px) {
+    article{
+      flex-direction: row;
+    }
+  }
 
 </style>

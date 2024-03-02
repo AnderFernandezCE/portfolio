@@ -1,8 +1,50 @@
 ---
 import Section from '@/components/Section.astro'
 import Project from '@/icons/Project.astro'
+
+import Skill from '@/components/Skill.astro'
+
+const rowOne = ["JavaScript","React",3,4,5,6,7,8]
+const rowTwo = [1,2,3,4,5,6,7,8]
 ---
 <Section title="Habilidades">
   <Project slot='section-svg'/>
-  <p> Skills </p>
+  
+  <div class="skills-container">
+    <div class="row">
+      { rowOne.map((item)=> <Skill title={item} />)}
+    </div>
+    <div class="row">
+      { rowTwo.map((item)=> <Skill title={item} />)}
+    </div>
+  </div>
+
 </Section>
+
+<style>
+  .skills-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width:100%;
+    max-width: 340px;
+  }
+  .row{
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (width >= 700px) {
+    .skills-container{
+      max-width: 100%;
+      flex-direction: column;
+    }
+    .row{
+      flex-direction: row;
+      gap:20px;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+</style>
