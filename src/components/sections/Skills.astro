@@ -13,54 +13,96 @@ import Haskell from '@/icons/skills/Haskell.astro'
 import Csharp from '@/icons/skills/Csharp.astro'
 import Git from '@/icons/skills/Git.astro'
 
-// const rowOne = ["JavaScript","React","SQL","Python","PHP","Haskell","Haskell","Git"]
 const rowTwo = ["FastAPI","React","SQL","Python","PHP","Haskell","Haskell","Git"]
 const rowOne ={
   "Python": Python,
   "JavaScript": JavaScript,
   "React": React,
   "SQL": SQL,
+  "Git": Git,
   "PHP": PHP,
   "Haskell": Haskell,
   "C#": Csharp,
-  "Git": Git
 }
 ---
 <Section title="Habilidades">
   <Project slot='section-svg'/>
-  
-  <div class="skills-container">
-    <div class="row">
-      { Object.entries(rowOne).map(([key, Value])=>{ 
+  <p>Estas son algunas de las Habilidades y tecnologías en las cuales me he formado durante mi etapa de desarrollo</p>
+
+  <div class="items-wrapper">
+    <div class="items-container">
+      <h2>Frontend</h2>
+      <div class="items">
+        { Object.entries(rowOne).map(([key, Value])=>{ 
  
           return(
-          <Skill title={key}>
-            <Value />
+          <Skill title={key} >
+            <Value classname="svg-icon"/>
           </Skill>)
         })
       }
+      </div>
     </div>
-    <div class="row">
-      { rowTwo.map((item)=> <Skill title={item}>
-        <JavaScript />
-      </Skill>)}
+
+    <div class="items-container">
+      <h2>Backend</h2>
+      <div class="items">
+        { Object.entries(rowOne).map(([key, Value])=>{ 
+ 
+          return(
+          <Skill title={key}>
+            <Value classname="svg-icon"/>
+          </Skill>)
+        })
+      }
+      </div>
+    </div>
+
+    <div class="items-container">
+      <h2>Tools</h2>
+      <div class="items">
+        { Object.entries(rowOne).map(([key, Value])=>{ 
+ 
+          return(
+          <Skill title={key}>
+            <Value classname="svg-icon"/>
+          </Skill>)
+        })
+      }
+      </div>
     </div>
   </div>
 
 </Section>
 
 <style>
-  .skills-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    width:100%;
-    max-width: 340px;
+  .svg-icon {
+    width: 40px;
+    height: 40px;
   }
-  .row{
+
+  .items-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(50%,350px),1fr)) ;
+    width: 100%;
+    justify-items: center;
+    gap: 15px;
+  }
+  .items-container{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     flex-direction: column;
+    background-color: rgb(65, 65, 65);
+    gap:15px;
+    border-radius: 15px;
+    border: solid 1px ;
+  }
+  .items{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @media (width >= 700px) {
@@ -73,6 +115,12 @@ const rowOne ={
       gap:20px;
       justify-content: space-between;
       width: 100%;
+    }
+  }
+
+  @media (width >= 954px) {
+    .items-container:nth-child(3) {
+      transform: translateX(50%); 
     }
   }
 </style>
