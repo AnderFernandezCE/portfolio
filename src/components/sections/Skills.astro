@@ -4,36 +4,59 @@ import Project from '@/icons/Project.astro'
 
 import Skill from '@/components/Skill.astro'
 
-import React from '@/icons/skills/React.astro'
-import JavaScript from '@/icons/skills/JavaScript.astro'
 import SQL from '@/icons/skills/SQL.astro'
 import Python from '@/icons/skills/Python.astro'
 import PHP from '@/icons/skills/PHP.astro'
 import Haskell from '@/icons/skills/Haskell.astro'
 import Csharp from '@/icons/skills/Csharp.astro'
-import Git from '@/icons/skills/Git.astro'
+import NodeJS from '@/icons/skills/NodeJS.astro'
+import Java from '@/icons/skills/Java.astro'
+import Fastapi from '@/icons/skills/Fastapi.astro'
 
-const rowTwo = ["FastAPI","React","SQL","Python","PHP","Haskell","Haskell","Git"]
-const rowOne ={
-  "Python": Python,
+import Html from '@/icons/skills/Html.astro'
+import Css from '@/icons/skills/Css.astro'
+import JavaScript from '@/icons/skills/JavaScript.astro'
+import React from '@/icons/skills/React.astro'
+import JQuery from '@/icons/skills/JQuery.astro'
+
+import Astro_icon from '@/icons/skills/Astro_icon.astro'
+import Docker from '@/icons/skills/Docker.astro'
+import Linux from '@/icons/skills/Linux.astro'
+
+const frontEnd = {
+  "HTML5" : Html,
+  "CSS": Css,
   "JavaScript": JavaScript,
-  "React": React,
+  "ReactJS": React,
+  "jQuery" : JQuery
+}
+const backEnd = {
+  "Python": Python,
   "SQL": SQL,
-  "Git": Git,
   "PHP": PHP,
+  "NodeJS": NodeJS,
   "Haskell": Haskell,
   "C#": Csharp,
+  "Java": Java,
+  "FastAPI": Fastapi
 }
+
+const learning = {
+  "Astro": Astro_icon,
+  "Docker": Docker,
+  "Linux": Linux
+}
+
 ---
 <Section title="Habilidades">
   <Project slot='section-svg'/>
-  <p>Estas son algunas de las Habilidades y tecnologías en las cuales me he formado durante mi etapa de desarrollo</p>
+  <p>Estas son algunas de las <span>habilidades y tecnologías</span> en las cuales me he formado durante mi etapa de desarrollo</p>
 
   <div class="items-wrapper">
     <div class="items-container">
       <h2>Frontend</h2>
       <div class="items">
-        { Object.entries(rowOne).map(([key, Value])=>{ 
+        { Object.entries(frontEnd).map(([key, Value])=>{ 
  
           return(
           <Skill title={key} >
@@ -47,7 +70,7 @@ const rowOne ={
     <div class="items-container">
       <h2>Backend</h2>
       <div class="items">
-        { Object.entries(rowOne).map(([key, Value])=>{ 
+        { Object.entries(backEnd).map(([key, Value])=>{ 
  
           return(
           <Skill title={key}>
@@ -59,9 +82,9 @@ const rowOne ={
     </div>
 
     <div class="items-container">
-      <h2>Tools</h2>
+      <h2>Aprendiendo</h2>
       <div class="items">
-        { Object.entries(rowOne).map(([key, Value])=>{ 
+        { Object.entries(learning).map(([key, Value])=>{ 
  
           return(
           <Skill title={key}>
@@ -76,9 +99,12 @@ const rowOne ={
 </Section>
 
 <style>
+  span{
+    color: #7AB3E0;
+  }
   .svg-icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 
   .items-wrapper{
@@ -87,22 +113,33 @@ const rowOne ={
     width: 100%;
     justify-items: center;
     gap: 15px;
+    margin-top: 50px;
   }
   .items-container{
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
     flex-direction: column;
-    background-color: rgb(65, 65, 65);
+    background-color: #1c1f22;
     gap:15px;
     border-radius: 15px;
-    border: solid 1px ;
+    border: solid 1px rgba(255, 255, 255, 0.158);
+    transition: all 0.15s ease;
+    color: rgb(202, 201, 201);
+  }
+  .items-container:hover{
+    border: solid 1px rgba(255, 255, 255, 0.336);
+    background-color: #212527;
+    color: white;
   }
   .items{
     width: 90%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  h2{
+    color: #D3B5FF;
+    margin-top: 10px;
   }
 
   @media (width >= 700px) {
@@ -115,6 +152,10 @@ const rowOne ={
       gap:20px;
       justify-content: space-between;
       width: 100%;
+    }
+    .svg-icon {
+      width: 40px;
+      height: 40px;
     }
   }
 
