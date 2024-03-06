@@ -16,6 +16,7 @@ import MailIcon from '@/icons/MailIcon.astro'
         <Send/>
       </Primary>
     <Secondary_button classname="button copy-button">
+      <span class="popup-notification">Copiado!</span>
       <Copy/>
     </Secondary_button>
     </div>
@@ -24,6 +25,36 @@ import MailIcon from '@/icons/MailIcon.astro'
 </Section>
 
 <style>
+  .popup-notification {
+    opacity: 0;
+    width: 100px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .popup-notification::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  .active{
+    opacity: 1;
+    bottom:125%;
+    transition: all ease-in-out 0.2s; 
+  }
+
   div{
     display: grid;
     grid-template-columns: 1fr;
@@ -37,7 +68,6 @@ import MailIcon from '@/icons/MailIcon.astro'
     justify-content: center;
     align-items: center;
     color: white;
-    /* grid-column:1/4; */
     height: 35px;
     font-size: 14px;
   }
@@ -79,13 +109,29 @@ import MailIcon from '@/icons/MailIcon.astro'
 <script>
   const button = document.querySelector(".copy-button")
   button.addEventListener('click', cpEmail)
+  const copiedMessage = document.querySelector(".popup-notification")
 
   async function cpEmail(){
     try{
       await navigator.clipboard.writeText("anderfernandez.ce@gmail.com")
+      copiedMessage.classList.toggle("active")
+
+      const timeoutId = setTimeout(function() {
+            copiedMessage.classList.remove("active");
+        }, 3000);
+        // Event listener to remove "active" class when clicked outside
+      function removeActiveClass(event) {
+          if (!copiedMessage.contains(event.target)) {
+            clearTimeout(timeoutId);
+            copiedMessage.classList.remove("active");
+            document.body.removeEventListener("click", removeActiveClass);
+          }
+      }
+      document.body.addEventListener("click", removeActiveClass);
     }
     catch (err){
       console.error(err)
+      alert(err)
     }
   }
 </script>
