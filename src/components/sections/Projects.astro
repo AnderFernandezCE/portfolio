@@ -3,26 +3,35 @@ import Section from '@/components/Section.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
 import StackIcon from '@/icons/StackIcon.astro'
 import Spill from '@/components/Spill.astro'
+
+const reposearchspills = ["Webscrapping", "API", "ReactJS", "NLP", "Automation", "MySQL", "Python", "Backend"]
+const passmanspills = ["Cryptography", "API", "End to End", "Docker", "Token Provider", "System design", "Python", "Backend"]
 ---
 <Section title="Proyectos">
   <StackIcon slot='section-svg'/>
 
   <ProjectCard imagePosition="left" title="Reposearch" status="active" statusMessage="Activo">
     <img src="/reposearch.png" alt="reposearch" slot="image"/>  
-    <p slot="project-description">Especializado en la ingeniería de Software, con un gran interés en el desarrollo de productos. Con capacidad para aprender y aplicar mis conocimientos al ámbito profesional. asdf asdf asdf asdf mnaskmldf hklajsdhf kljasd fkljas dfkljasdkljf hlkajsdf lkjas df lkjaslkjdf lakjsd flkja sdf lkjasldkjf alksjdf lkjasdf lkjasd fjkla shdflkjas dflkj hasdkljf haslkjdf hakljsdhf kljasdfh kljasdhf lkjashdf lkjashdf lkjhasdfklj haslkjdfh kljasd fklja sdf kjlhasdfklj</p>
-    <Spill/>
-    <Spill/>
-    <Spill/>
-    <Spill/>
+    <p slot="project-description">Reposearch es un <span>buscador web</span> de memorias de fin de grado de informática. </p>
+    <p slot="project-description">Reposearch es un buscador web de memorias de fin de grado de informática</p>
+    {reposearchspills.map(name =>{
+      return <Spill spillname={name}/>
+    })}
   </ProjectCard>
 
   <ProjectCard imagePosition="right" title="Password manager" >
     <img src="/passman.png" alt="passman" slot="image"/>  
     <p slot="project-description">Especializado en la ingeniería de Software, con un gran interés en el desarrollo de productos. Con capacidad para aprender y aplicar mis conocimientos al ámbito profesional.</p>
+    {passmanspills.map(name =>{
+      return <Spill spillname={name}/>
+    })}
   </ProjectCard>
 
 
 </Section>
 
 <style>
+  span{
+    color: var(--yellow-text);
+    }
 </style>

@@ -1,5 +1,8 @@
+---
+const {spillname} = Astro.props
+---
 <article>
-  <p>Cryptography</p>
+  <p>{spillname}</p>
 </article>
 
 <style>
@@ -10,10 +13,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
+    padding-inline: 5px;
   }
  p{
-  color: #5B8FB9;
+  color: var(--blue-text);
   font-size: 14px;
+ }
+ @media (width >= 700px) {
+  p{
+  font-size: 20px;
+ }
  }
 </style>
