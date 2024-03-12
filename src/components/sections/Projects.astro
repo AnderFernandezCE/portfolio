@@ -12,8 +12,8 @@ const passmanspills = ["Cryptography", "API", "End to End", "Docker", "Token Pro
 
   <ProjectCard imagePosition="left" title="Reposearch" status="active" statusMessage="Activo">
     <img src="/reposearch.png" alt="reposearch" slot="image"/>  
-    <p slot="project-description">Reposearch es un <span>buscador web</span> de memorias de fin de grado de informática. </p>
-    <p slot="project-description">Reposearch es un buscador web de memorias de fin de grado de informática</p>
+    <p slot="project-description">Reposearch es un <span>buscador web</span> de memorias de fin de grado de informática. Incluye un <span>buscador semántico</span>, para poder buscar en el contenido de las memorias.</p>
+    <p slot="project-description">Creada con Python, FastAPI, MySQL y ReactJS.</p>
     {reposearchspills.map(name =>{
       return <Spill spillname={name}/>
     })}
@@ -34,4 +34,8 @@ const passmanspills = ["Cryptography", "API", "End to End", "Docker", "Token Pro
   span{
     color: var(--yellow-text);
     }
+  p{
+    color: #ffffffd7;
+    margin-bottom: 10px;
+  }
 </style>
