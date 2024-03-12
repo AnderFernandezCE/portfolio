@@ -2,16 +2,21 @@
 import Section from '@/components/Section.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
 import StackIcon from '@/icons/StackIcon.astro'
+import Spill from '@/components/Spill.astro'
 ---
 <Section title="Proyectos">
   <StackIcon slot='section-svg'/>
 
-  <ProjectCard imagePosition="left" title="Reposearch">
+  <ProjectCard imagePosition="left" title="Reposearch" status="active" statusMessage="Activo">
     <img src="/reposearch.png" alt="reposearch" slot="image"/>  
-    <p slot="project-description">Especializado en la ingeniería de Software, con un gran interés en el desarrollo de productos. Con capacidad para aprender y aplicar mis conocimientos al ámbito profesional.</p>
+    <p slot="project-description">Especializado en la ingeniería de Software, con un gran interés en el desarrollo de productos. Con capacidad para aprender y aplicar mis conocimientos al ámbito profesional. asdf asdf asdf asdf mnaskmldf hklajsdhf kljasd fkljas dfkljasdkljf hlkajsdf lkjas df lkjaslkjdf lakjsd flkja sdf lkjasldkjf alksjdf lkjasdf lkjasd fjkla shdflkjas dflkj hasdkljf haslkjdf hakljsdhf kljasdfh kljasdhf lkjashdf lkjashdf lkjhasdfklj haslkjdfh kljasd fklja sdf kjlhasdfklj</p>
+    <Spill/>
+    <Spill/>
+    <Spill/>
+    <Spill/>
   </ProjectCard>
 
-  <ProjectCard imagePosition="left" title="Password manager">
+  <ProjectCard imagePosition="right" title="Password manager" >
     <img src="/passman.png" alt="passman" slot="image"/>  
     <p slot="project-description">Especializado en la ingeniería de Software, con un gran interés en el desarrollo de productos. Con capacidad para aprender y aplicar mis conocimientos al ámbito profesional.</p>
   </ProjectCard>
@@ -20,5 +25,4 @@ import StackIcon from '@/icons/StackIcon.astro'
 </Section>
 
 <style>
-
 </style>

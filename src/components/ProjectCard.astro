@@ -1,42 +1,55 @@
 ---
-const {imagePosition, title} = Astro.props
+const {imagePosition, title, status, statusMessage} = Astro.props
 ---
-<article>
-  <div class:list={["image-container", imagePosition]}>
+<article class={imagePosition}>
+  <!-- <img src="/prueba5.svg" class="image-background"> -->
+  <div class="image-container">
     <slot name="image" />
-      <!-- <img src="/prueba.png" class="image-background"> -->
   </div>
   <div class="project-info-container">
     <div class="project-info"> 
-      <h2>{title}</h2>
+      <h2>{title} </h2>
+      <!-- <header>
+        <div class:list={["ring-container", status]}>
+          <div class="ringring"></div>
+          <div class="circle"></div>
+          <p>{statusMessage}</p>
+        </div>
+      </header> -->
       <slot name="project-description"></slot>
+      <div class="tag-section">
+        <slot />
+      </div>
+      
     </div>
    
   </div>
-  <slot />
 </article>
 
 <style>
-  .image-background{
-    z-index: -1;
-    position: absolute;
-    top:-400px;
-    bottom:0;
-    object-fit: contain;
+  .tag-section{
+    display: flex;
+    /* justify-content: center;
+    align-items: ; */
   }
   article{
     width: 100%;
+    height: 100%;
     border: 1px solid #7575756c;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 50px;
+    /* display: flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 75px;
     position: relative;
   }
 
   .project-info-container{
     background: linear-gradient(0deg, rgba(45, 45, 45, 0.65) 0%, rgba(29, 29, 29, 0.62) 100.01%);
     border-radius: 0 0 20px 20px;
+    /* width: 100%; */
+    z-index: 1;
   }
 
   .project-info{
@@ -49,24 +62,129 @@ const {imagePosition, title} = Astro.props
   }
   h2{
     color: #B47CFB;
-    /* margin-top:15px; */
+    margin-top: 15px;
   }
+  
 
   .image-container{
     display: flex;
     justify-content: center;
     align-items: center;
     background: radial-gradient(99.79% 99.79% at 50.21% 0%, rgba(91, 143, 185, 0.2844) 0%, rgba(91, 143, 185, 0.036) 100%);
-    backdrop-filter: blur(5px);
-    padding:40px 0;
+    backdrop-filter: blur(3px);
+    height: 200px;
     border-radius:20px 20px 0 0;
-    /* border: 1px solid #7575756c; */
+    position: relative;
+    z-index: ;
   }
+  .image-container::after{
+    content: "";
+    width: 80vw;
+    aspect-ratio: 1/1;
+    background-color: #7ab4e028;
+    position: absolute;
+    border-radius: 50%;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    filter: blur(120px);
+  }
+
+  header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 60px;
+    margin-top: 15px;
+    justify-content: space-between;
+  }
+  .ring-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+  }
+
+  /* .active > .circle
+  {
+    background-color: #529b16;
+  }
+  .active > .ringring{
+    border: 2px solid #529b16;
+  }
+  .circle {
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+  }
+
+  .ringring {
+    border: 2px solid yellow;
+    -webkit-border-radius: 30px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top:-5px;
+    left: -5px;
+    
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.0
+  }
+  @-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+} */
 
   @media (width >= 700px) {
     article{
-      flex-direction: row;
+      min-height: 250px;
+      grid-template-columns: 250px 1fr;
     }
-  }
+    .image-container::after{
+      width: 200%;
+      filter: blur(150px);
+    }
+    .right{
+      grid-template-columns: 1fr 250px ;
+    }
+    .left  .project-info-container{
+      background: linear-gradient(90deg, rgba(45, 45, 45, 0.65) 0%, rgba(29, 29, 29, 0.62) 100.01%);
+      border-radius: 0 20px 20px 0;
+    }
+    .right  .project-info-container{
+      order: -1;
+      background: linear-gradient(-90deg, rgba(45, 45, 45, 0.65) 0%, rgba(29, 29, 29, 0.62) 100%);
+      border-radius: 20px 0 0px 20px;
+    }
+    .image-container{
+      width: 250px;
+      height: 100%;
+      /* aspect-ratio: 1/1; */
+    }
+    .left .image-container{
+      border-radius:20px 0 0 20px;
+      background: radial-gradient(99.79% 99.79% at 10% 50%, rgba(91, 143, 185, 0.2844) 0%, rgba(91, 143, 185, 0.036) 100%);
+    }
+    .right .image-container{
+      border-radius:0 20px 20px 0;
+      background: radial-gradient(99.79% 99.79% at 90% 50%, rgba(91, 143, 185, 0.2844) 0%, rgba(91, 143, 185, 0.036) 100%);
+    }
+    /* .circle {
+      width: 15px;
+      height: 15px;
+    }
 
+    .ringring {
+      height: 25px;
+      width: 25px;
+    } */
+  }
 </style>
