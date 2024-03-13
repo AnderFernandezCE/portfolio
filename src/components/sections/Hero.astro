@@ -26,17 +26,17 @@ const iconsize = 25
     <section>
       <ul>
         <li>
-          <a href="https://www.linkedin.com/in/ander-fernandez-carrero-2b968521a/" target="_blank">
+          <a href="https://www.linkedin.com/in/ander-fernandez-carrero-2b968521a/" target="_blank" rel="noreferrer noopener">
             <Linkedin ></Linkedin>
           </a>
         </li>
         <li>
-          <a href="https://github.com/AnderFernandezCE" target="_blank">
+          <a href="https://github.com/AnderFernandezCE" target="_blank" rel="noreferrer noopener">
             <Github></Github>
           </a>
         </li>
         <li>
-          <a href="mailto:anderfernandez.ce@gmail.com" target="_blank">
+          <a href="mailto:anderfernandez.ce@gmail.com" target="_blank" rel="noreferrer noopener">
             <Mail ></Mail>
           </a>
         </li>
@@ -62,7 +62,7 @@ const iconsize = 25
   .hero_wrapper{
     position: relative;
     width: 100%;
-    margin-top: -22px;
+    margin-top: -26px;
   }
   header{
     display: flex;
@@ -119,6 +119,10 @@ const iconsize = 25
     justify-content: center;
     align-items: center;
   }
+  li a:hover{
+    transform: scale(110%);
+    color: var(--blue-text);
+  }
   nav{
     margin-top: 50px;
     width: 100%;
@@ -162,8 +166,11 @@ const iconsize = 25
 
 
   @media (width >= 700px) {
+    h1{
+      font-size: 56px;
+    }
     .hero_wrapper{
-      margin-top: -52px;
+      margin-top: -58px;
     }
     .ander-image-container{
       width: 128px;
@@ -203,6 +210,9 @@ const iconsize = 25
     section div{
       max-width: 600px;
     }   
+    header{
+      margin-bottom: 120px;
+    }
   }
   
 
