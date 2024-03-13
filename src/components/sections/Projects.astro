@@ -1,41 +1,129 @@
 ---
-import Section from '@/components/Section.astro'
-import ProjectCard from '@/components/ProjectCard.astro'
-import StackIcon from '@/icons/StackIcon.astro'
-import Spill from '@/components/Spill.astro'
+import Section from "@/components/Section.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import StackIcon from "@/icons/StackIcon.astro";
+import Spill from "@/components/Spill.astro";
+import GithubOutline from "@/icons/GithubOutline.astro";
+import Preview  from '@/icons/Preview.astro'
 
-const reposearchspills = ["Webscrapping", "API", "ReactJS", "NLP", "Automation", "MySQL", "Python", "Backend"]
-const passmanspills = ["Cryptography", "API", "End to End", "Docker", "Token Provider", "System design", "Python", "Backend"]
+const reposearchspills = [
+  "Webscrapping",
+  "API",
+  "ReactJS",
+  "NLP",
+  "Automation",
+  "MySQL",
+  "Python",
+  "Backend",
+];
+const passmanspills = [
+  "Cryptography",
+  "API",
+  "End to End",
+  "Docker",
+  "Token Provider",
+  "System design",
+  "Python",
+  "Backend",
+];
 ---
+
 <Section title="Proyectos">
-  <StackIcon slot='section-svg'/>
+  <StackIcon slot="section-svg" />
 
-  <ProjectCard imagePosition="left" title="Reposearch" status="active" statusMessage="Activo">
-    <img src="/reposearch.png" alt="reposearch" slot="image"/>  
-    <p slot="project-description">Reposearch es un <span>buscador web</span> de memorias de fin de grado de informática. Incluye un <span>buscador semántico</span>, para poder buscar en el contenido de las memorias.</p>
-    <p slot="project-description">Creada con Python, FastAPI, MySQL y ReactJS.</p>
-    {reposearchspills.map(name =>{
-      return <Spill spillname={name}/>
-    })}
+  <ProjectCard
+    imagePosition="left"
+    title="Reposearch"
+    status="active"
+    statusMessage="Activo"
+  >
+    <img src="/reposearch.png" alt="reposearch" slot="image" />
+    <p slot="project-description">
+      Reposearch es un <span>buscador web de memorias de fin de grado de informática</span>.
+      Incluye un <span>buscador semántico</span>, para poder buscar en el
+      contenido de las memorias.
+    </p>
+    <p slot="project-description">
+      Creada con Python, FastAPI, MySQL y ReactJS.
+    </p>
+    {
+      reposearchspills.map((name) => {
+        return <Spill spillname={name} />;
+      })
+    }
+    <div class="project-links" slot="project-links">
+      <a href="https://semantic.ikasten.io/" rel="noreferrer noopener" target="_blank"><Preview classname="svg-icon" />Preview</a>
+    </div>
   </ProjectCard>
 
-  <ProjectCard imagePosition="right" title="Password manager" >
-    <img src="/passman.png" alt="passman" slot="image"/>  
-    <p slot="project-description">Especializado en la ingeniería de Software, con un gran interés en el desarrollo de productos. Con capacidad para aprender y aplicar mis conocimientos al ámbito profesional.</p>
-    {passmanspills.map(name =>{
-      return <Spill spillname={name}/>
-    })}
+  <ProjectCard imagePosition="right" title="Passman">
+    <img src="/passman.png" alt="passman" slot="image" />
+    <p slot="project-description">
+      Passman es un <span>gestor de contraseñas</span> que te permite <span>almacenar de forma segura 
+      tus credenciales en línea </span>y acceder a ellas con facilidad cuando las necesites.
+    </p>
+    <p slot="project-description">
+      Creada con Python, FastAPI, MySQL y TKinter.
+    </p>
+    {
+      passmanspills.map((name) => {
+        return <Spill spillname={name} />;
+      })
+    }
+    <div class="project-links" slot="project-links">
+      <a href="https://github.com/AnderFernandezCE/passwordManager" target="_blank" rel="noreferrer noopener"> 
+        <GithubOutline classname="svg-icon" />Code
+      </a>
+    </div>
   </ProjectCard>
-
-
 </Section>
 
 <style>
-  span{
+  span {
     color: var(--yellow-text);
-    }
-  p{
-    color: #ffffffd7;
+    /* font-weight: bold; */
+  }
+  p {
+    /* color: #ffffffd7; */
     margin-bottom: 10px;
+  }
+  .project-links {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  a {
+    background: #1d1f20;
+    border: 1px solid #696969;
+    border-radius: 10px;
+    padding-inline: 10px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.801);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    transition: 0.1s all ease-in-out;
+  }
+  a:hover{
+    border: 1px solid white;
+     color: white;
+    /* background-color: rgb(70, 70, 70); */ 
+  }
+  .svg-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  @media (width >= 700px) {
+    .svg-icon {
+      width: 30px;
+      height: 30px;
+    }
+    a{
+      font-size: 26px;
+      gap: 10px;
+    }
   }
 </style>
