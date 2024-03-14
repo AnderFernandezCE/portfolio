@@ -49,7 +49,7 @@ const iconsize = 25
         
         <nav>
           <Primary href="/#contact" >Contáctame</Primary>
-          <Secondary href="/Ander_Fernandez_cv.pdf">Mi CV</Secondary>
+          <Secondary href="/Ander_Fernandez_cv-compressed.pdf">Mi CV</Secondary>
         </nav>
       </div>
       
@@ -151,7 +151,7 @@ const iconsize = 25
   section{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
     align-items: center;
   }
   section div{
@@ -165,32 +165,32 @@ const iconsize = 25
   }
 
 
-  @media (width >= 700px) {
+  @media (width >= 600px) {
     h1{
-      font-size: 56px;
+      font-size: 35px;
     }
     .hero_wrapper{
-      margin-top: -58px;
+      margin-top: -36px;
     }
     .ander-image-container{
-      width: 128px;
+      width: 88px;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .about_me{
-      height: 128px;
+      height: 88px;
       justify-content: space-between;
     }
     img{
-      width: 128px;
-      height: 128px;
+      width: 88px;
+      height: 88px;
       border-radius: 15px;
       object-fit: contain;
     }
     span{
-      font-size: 22px;
+      font-size: 18px;
     }
 
     ul{
@@ -211,9 +211,37 @@ const iconsize = 25
       max-width: 600px;
     }   
     header{
-      margin-bottom: 120px;
+      margin-bottom: 80px;
     }
   }
   
+  @media (width >= 900px) {
+    h1{
+      font-size: 56px;
+    }
+    .hero_wrapper{
+      margin-top: -58px;
+    }
+    .ander-image-container{
+      width: 128px;
+      height: 100%;
+    }
+    .about_me{
+      height: 128px;
+    }
+    img{
+      width: 128px;
+      height: 128px;
+    }
+    header{
+      margin-bottom: 120px;
+    }
+    span{
+      font-size: 22px;
+    }
+    section{
+      gap: 50px;
+    }
+  }
 
 </style>
