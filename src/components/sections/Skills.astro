@@ -54,7 +54,7 @@ const learning = {
   <Project slot="section-svg" />
   <p>
     Estas son algunas de las <span>habilidades y tecnologías</span> en las cuales
-    me he formado durante mi etapa de desarrollo
+    me he formado durante mi etapa de desarrollo.
   </p>
 
   <div class="items-wrapper">
@@ -65,7 +65,7 @@ const learning = {
           Object.entries(frontEnd).map(([key, Value]) => {
             return (
               <Skill title={key}>
-                <Value classname="svg-icon" />
+                <Value classname="svg-icon" loading="lazy"/>
               </Skill>
             );
           })
@@ -120,7 +120,7 @@ const learning = {
     width: 100%;
     justify-items: center;
     gap: 15px;
-    margin-top: 50px;
+    margin-top: 30px;
   }
   .items-container {
     display: flex;
@@ -155,6 +155,9 @@ const learning = {
     .svg-icon {
       width: 40px;
       height: 40px;
+    }
+    .items-wrapper {
+      margin-top: 50px;
     }
   }
   @media (width >= 900px) {
