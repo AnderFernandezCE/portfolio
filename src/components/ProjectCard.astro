@@ -92,28 +92,23 @@ const {imagePosition, title} = Astro.props
     margin-top: 15px;
     justify-content: space-between;
   }
-  .ring-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-    height: 25px;
-  }
 
   @media (width >= 700px) {
     article{
-      min-height: 250px;
-      grid-template-columns: 250px 1fr;
+      min-height: 200px;
+      grid-template-columns: 200px 1fr;
+    }
+    .image-container{
+      height: 100%;
     }
     .image-container::after{
-      width: 200%;
+      width: 150%;
       height: 100%;
       top: 0;
-      filter: blur(150px);
+      filter: blur(130px);
     }
     .right{
-      grid-template-columns: 1fr 250px ;
+      grid-template-columns: 1fr 200px ;
     }
     .left  .project-info-container{
       background: linear-gradient(90deg, rgba(45, 45, 45, 0.65) 0%, rgba(29, 29, 29, 0.62) 100.01%);
@@ -124,9 +119,6 @@ const {imagePosition, title} = Astro.props
       background: linear-gradient(-90deg, rgba(45, 45, 45, 0.65) 0%, rgba(29, 29, 29, 0.62) 100%);
       border-radius: 20px 0 0px 20px;
     }
-    .image-container{
-      height: 100%;
-    }
     .left .image-container{
       border-radius:20px 0 0 20px;
       background: radial-gradient(99.79% 99.79% at 10% 50%, rgba(91, 143, 185, 0.2844) 0%, rgba(91, 143, 185, 0.036) 100%);
@@ -134,6 +126,28 @@ const {imagePosition, title} = Astro.props
     .right .image-container{
       border-radius:0 20px 20px 0;
       background: radial-gradient(99.79% 99.79% at 90% 50%, rgba(91, 143, 185, 0.2844) 0%, rgba(91, 143, 185, 0.036) 100%);
+    }
+    .tag-section{
+      gap: 7px;
+    }
+  }
+
+  @media (width >= 900px) {
+    article{
+      min-height: 250px;
+      grid-template-columns: 250px 1fr;
+    }
+    .image-container{
+      height: 100%;
+    }
+    .image-container::after{
+      width: 200%;
+      height: 100%;
+      top: 0;
+      filter: blur(150px);
+    }
+    .right{
+      grid-template-columns: 1fr 250px ;
     }
     .tag-section{
       gap: 10px;

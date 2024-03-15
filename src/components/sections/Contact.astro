@@ -89,9 +89,9 @@ import MailIcon from '@/icons/MailIcon.astro'
     border-radius: 5px;
   }
 
-  @media (width >= 700px) {
+  @media (width >= 600px) {
     div{
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(270px, 1fr) 160px;
       align-items: center;
       gap: 20px;
     }
@@ -102,6 +102,12 @@ import MailIcon from '@/icons/MailIcon.astro'
     input{
       height: 50px;
       font-size: 18px;
+    }
+  }
+  @media (width >= 900px) {
+    input{
+      height: 50px;
+      font-size: 20px;
     }
   }
  

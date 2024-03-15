@@ -62,15 +62,21 @@ import UserIcon from "@/icons/UserIcon.astro";
     /* color: var(--soft-pink-text); */
   }
 
-  @media (width >= 700px) {
+  @media (width >= 650px) {
     .about-wrapper {
       flex-direction: row;
-      gap: 60px;
+      gap: 20px;
     }
 
+  }
+  @media (width >= 900px) {
     .image-wrapper {
-      width: 300px;
-      height: 300px;
+      width: 260px;
+      height: 260px;
+    }
+    .about-wrapper {
+
+      gap: 60px;
     }
   }
 </style>
