@@ -20,15 +20,20 @@ const {classname, ...rest} = Astro.props
     color: white;
     cursor: pointer;
     position: relative;
+  transition: all 0.2s ease-in-out;
+  }
+  button:hover {
+    border: 1px solid white;
+    scale: 1.05;
   }
 
   @media (width >= 600px) {
-    a{
+    button{
       font-size: 22px;
     }
   }
   @media (width >= 900px) {
-    a{
+    button{
       font-size: 26px;
     }
   }
